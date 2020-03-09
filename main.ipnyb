@@ -7,7 +7,8 @@
    "codemirror_mode": {
     "name": "ipython",
     "version": 3
-   }
+   },
+   "version": "3.8.2-final"
   },
   "orig_nbformat": 2,
   "file_extension": ".py",
@@ -15,7 +16,11 @@
   "name": "python",
   "npconvert_exporter": "python",
   "pygments_lexer": "ipython3",
-  "version": 3
+  "version": 3,
+  "kernelspec": {
+   "name": "python38264bitvenvvenv4ca732631696488eb4cbf0e4a63b9d3b",
+   "display_name": "Python 3.8.2 64-bit ('venv': venv)"
+  }
  },
  "cells": [
   {
@@ -35,12 +40,131 @@
   },
   {
    "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": "{'userId': 1,\n 'id': 1,\n 'title': 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',\n 'body': 'quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto'}"
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Wczytywanie danych\n",
+    "import requests\n",
+    "\n",
+    "reqUsers = requests.get(\"https://jsonplaceholder.typicode.com/users\")\n",
+    "reqPosts = requests.get(\"https://jsonplaceholder.typicode.com/posts\")\n",
+    "if [reqUsers.status_code, reqPosts.status_code] != [200, 200]: \n",
+    "    raise Exception(\"Error: couldn't retrieve data from the server\")\n",
+    "\n",
+    "posts = reqPosts.json()\n",
+    "users = reqUsers.json()\n",
+    "posts[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": "{'userId': 1,\n 'id': 2,\n 'title': 'qui est esse',\n 'body': 'est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla',\n 'name': 'Leanne Graham',\n 'username': 'Bret',\n 'email': 'Sincere@april.biz',\n 'address': {'street': 'Kulas Light',\n  'suite': 'Apt. 556',\n  'city': 'Gwenborough',\n  'zipcode': '92998-3874',\n  'geo': {'lat': '-37.3159', 'lng': '81.1496'}},\n 'phone': '1-770-736-8031 x56442',\n 'website': 'hildegard.org',\n 'company': {'name': 'Romaguera-Crona',\n  'catchPhrase': 'Multi-layered client-server neural-net',\n  'bs': 'harness real-time e-markets'}}"
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Laczenie uzytkownikow z postami na podstawie klucza \"userId\"\n",
+    "def merge_lists(posts, users, joinKey):\n",
+    "    mergedLists = posts\n",
+    "    for i in range(len(posts)):\n",
+    "        for j in range(len(users)):\n",
+    "            if posts[i][joinKey] == users[j]['id']:\n",
+    "                for key in users[j].keys():\n",
+    "                    if key != \"id\":\n",
+    "                        mergedLists[i][key] = users[j][key]\n",
+    "    return mergedLists\n",
+    "\n",
+    "userPosts = merge_lists(posts, users, \"userId\")\n",
+    "userPosts[1]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "Bret napisał(a) 10 postów\nAntonette napisał(a) 10 postów\nSamantha napisał(a) 10 postów\nKarianne napisał(a) 10 postów\nKamren napisał(a) 10 postów\nLeopoldo_Corkery napisał(a) 10 postów\nElwyn.Skiles napisał(a) 10 postów\nMaxime_Nienow napisał(a) 10 postów\nDelphine napisał(a) 10 postów\nMoriah.Stanton napisał(a) 10 postów\n"
+    }
+   ],
+   "source": [
+    "def countPostsPerUser(userPosts):\n",
+    "    ids = {}\n",
+    "    for i in range(len(userPosts)):\n",
+    "        if userPosts[i][\"userId\"] not in ids:\n",
+    "            ids[userPosts[i][\"userId\"]] = [1, userPosts[i][\"username\"]]\n",
+    "        else:\n",
+    "            ids[userPosts[i][\"userId\"]][0]+=1\n",
+    "\n",
+    "    return ids\n",
+    "\n",
+    "\n",
+    "postsPerUser = countPostsPerUser(userPosts)\n",
+    "for key in postsPerUser.keys():\n",
+    "    print(\"{0} napisał(a) {1} postów\".format(postsPerUser[key][1], postsPerUser[key][0]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": "100"
+     },
+     "execution_count": 49,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "def getPostTitles(posts):\n",
+    "    titles = []\n",
+    "    for i in range(len(posts)):\n",
+    "        titles.append(posts[i]['title'])\n",
+    "    return titles\n",
+    "\n",
+    "\n",
+    "titles = getPostTitles(posts)\n",
+    "titlesSet = set(titles)\n",
+    "for i in range(len(titles)):\n",
+    "    if "
+   ]
+  },
+  {
+   "cell_type": "code",
    "execution_count": null,
    "metadata": {},
    "outputs": [],
-   "source": [
-    "import requests"
-   ]
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ]
 }
