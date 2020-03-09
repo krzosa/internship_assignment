@@ -41,14 +41,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 92,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": "{'userId': 1,\n 'id': 1,\n 'title': 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',\n 'body': 'quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto'}"
      },
-     "execution_count": 10,
+     "execution_count": 92,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -69,14 +69,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 93,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": "{'userId': 1,\n 'id': 2,\n 'title': 'qui est esse',\n 'body': 'est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla',\n 'name': 'Leanne Graham',\n 'username': 'Bret',\n 'email': 'Sincere@april.biz',\n 'address': {'street': 'Kulas Light',\n  'suite': 'Apt. 556',\n  'city': 'Gwenborough',\n  'zipcode': '92998-3874',\n  'geo': {'lat': '-37.3159', 'lng': '81.1496'}},\n 'phone': '1-770-736-8031 x56442',\n 'website': 'hildegard.org',\n 'company': {'name': 'Romaguera-Crona',\n  'catchPhrase': 'Multi-layered client-server neural-net',\n  'bs': 'harness real-time e-markets'}}"
      },
-     "execution_count": 8,
+     "execution_count": 93,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -99,21 +99,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 56,
+   "execution_count": 94,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": "Bret napisał(a) 10 postów\nAntonette napisał(a) 10 postów\nSamantha napisał(a) 10 postów\nKarianne napisał(a) 10 postów\nKamren napisał(a) 10 postów\nLeopoldo_Corkery napisał(a) 10 postów\nElwyn.Skiles napisał(a) 10 postów\nMaxime_Nienow napisał(a) 10 postów\nDelphine napisał(a) 10 postów\nMoriah.Stanton napisał(a) 10 postów\n"
-    },
-    {
-     "data": {
-      "text/plain": "{1: [10, 'Bret'],\n 2: [10, 'Antonette'],\n 3: [10, 'Samantha'],\n 4: [10, 'Karianne'],\n 5: [10, 'Kamren'],\n 6: [10, 'Leopoldo_Corkery'],\n 7: [10, 'Elwyn.Skiles'],\n 8: [10, 'Maxime_Nienow'],\n 9: [10, 'Delphine'],\n 10: [10, 'Moriah.Stanton']}"
-     },
-     "execution_count": 56,
-     "metadata": {},
-     "output_type": "execute_result"
     }
    ],
    "source": [
@@ -135,14 +127,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 55,
+   "execution_count": 95,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": "[]"
      },
-     "execution_count": 55,
+     "execution_count": 95,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -162,58 +154,43 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 74,
+   "execution_count": 118,
    "metadata": {},
    "outputs": [
     {
-     "data": {
-      "text/plain": "{0: 3, 1: 8, 2: 3, 3: 9, 4: 3, 5: 3, 6: 7, 7: 6, 8: 9, 9: 3}"
-     },
-     "execution_count": 74,
-     "metadata": {},
-     "output_type": "execute_result"
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "{0: [0.0, 8920.034455771924, 7508.843378161358, 13992.33684322624, 1810.3222631439153, 3834.522771623129, 9264.13307901301, 13840.59994593122, 13337.925531180917, 2104.4783053268516], 1: [8920.034455771924, 0.0, 2841.1566568831986, 15340.28444071682, 8142.13172853824, 5974.006424850167, 9542.686421141083, 8620.58005010442, 15386.185293115774, 7313.858771718971], 2: [7508.843378161358, 2841.1566568831986, 0.0, 14118.196259298, 7492.547056194283, 3824.068457458777, 11749.116646207225, 7862.997002422526, 13805.769058098904, 6647.188469398004], 3: [13992.33684322624, 15340.28444071682, 14118.196259298, 0.0, 15564.958285124749, 14261.98119449632, 13953.894404606366, 6738.0697783748055, 700.9122399238803, 16095.18723271311], 4: [1810.3222631439153, 8142.13172853824, 7492.547056194283, 15564.958285124749, 0.0, 4441.258100912202, 7618.822773137622, 14878.339345958926, 14964.695729147401, 861.6505388053678], 5: [3834.522771623129, 5974.006424850167, 3824.068457458777, 14261.98119449632, 4441.258100912202, 0.0, 11348.390060554837, 10437.095909499656, 13607.613726360201, 3785.9830263128797], 6: [9264.13307901301, 9542.686421141083, 11749.116646207225, 13953.894404606366, 7618.822773137622, 11348.390060554837, 0.0, 15961.725505319211, 14402.392496483275, 7901.447709331725], 7: [13840.59994593122, 8620.58005010442, 7862.997002422526, 6738.0697783748055, 14878.339345958926, 10437.095909499656, 15961.725505319211, 0.0, 6779.787845104183, 14173.719764397036], 8: [13337.925531180917, 15386.185293115774, 13805.769058098904, 700.9122399238803, 14964.695729147401, 13607.613726360201, 14402.392496483275, 6779.787845104183, 0.0, 15442.147433611546], 9: [2104.4783053268516, 7313.858771718971, 6647.188469398004, 16095.18723271311, 861.6505388053678, 3785.9830263128797, 7901.447709331725, 14173.719764397036, 15442.147433611546, 0.0]}\n{0: [4, 1810.3222631439153], 1: [2, 2841.1566568831986], 2: [1, 2841.1566568831986], 3: [8, 700.9122399238803], 4: [9, 861.6505388053678], 5: [9, 3785.9830263128797], 6: [4, 7618.822773137622], 7: [3, 6738.0697783748055], 8: [3, 700.9122399238803], 9: [4, 861.6505388053678]}\n"
     }
    ],
    "source": [
     "import geopy.distance\n",
     "\n",
-    "def findNeighbours(users):\n",
+    "def calculateDistances(users):\n",
     "    neighbours = {}\n",
     "    rng = range(len(users))\n",
     "    for i in rng:\n",
     "        tempDistance = 0\n",
+    "        neighbours[i] = []\n",
     "        # GEO1 = LATITUDE, LONGTITUDE\n",
     "        geo1 = (users[i]['address']['geo']['lat'], users[i]['address']['geo']['lng'])\n",
     "        for j in rng:\n",
     "            geo2 = (users[j]['address']['geo']['lat'], users[j]['address']['geo']['lng'])\n",
     "            distance = geopy.distance.distance(geo1, geo2).km\n",
-    "            if distance > tempDistance:\n",
-    "                tempDistance = distance \n",
-    "                neighbours[i] = j\n",
+    "            neighbours[i].append(distance)\n",
     "    return neighbours\n",
     "        \n",
     "\n",
+    "def findNearestNeighbours(usersDistances):\n",
+    "    for key,value in usersDistances.items():\n",
+    "        nearest = min(i for i in value if i > 0)\n",
+    "        usersDistances[key] = [value.index(nearest), nearest]\n",
+    "    return usersDistances\n",
     "\n",
-    "findNeighbours(users)\n",
-    "# geopy.distance.distance(coords_1, coords_2).km"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 63,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": "tuple"
-     },
-     "execution_count": 63,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "type((users[1]['address']['geo']['lat'], users[1]['address']['geo']['lng']))"
+    "usersDistances = calculateDistances(users)\n",
+    "nearestNeighbours = findNearestNeighbours(usersDistances)\n",
+    "print(calculateDistances(users))\n",
+    "print(nearestNeighbours)"
    ]
   }
  ]
