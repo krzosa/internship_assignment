@@ -1,0 +1,46 @@
+{
+ "nbformat": 4,
+ "nbformat_minor": 2,
+ "metadata": {
+  "language_info": {
+   "name": "python",
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   }
+  },
+  "orig_nbformat": 2,
+  "file_extension": ".py",
+  "mimetype": "text/x-python",
+  "name": "python",
+  "npconvert_exporter": "python",
+  "pygments_lexer": "ipython3",
+  "version": 3
+ },
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Wariant 2\n",
+    "Stwórz program/skrypt który\n",
+    "* pobierze dane o postach z ​https://jsonplaceholder.typicode.com/posts​ ​i połączy je z danymi o\n",
+    "userach ​https://jsonplaceholder.typicode.com/users\n",
+    "* policzy ile postów napisali userzy i zwróci listę stringów w postaci “​user_name napisał(a) ​count \n",
+    "postów”\n",
+    "* sprawdzi czy tytuły postów są unikalne i zwróci listę tytułów które nie są.\n",
+    "* dla każdego użytkownika znajdzie innego użytkownika, który mieszka najbliżej niego\n",
+    "Pożądanym elementem danego rozwiązania jest także zestaw testów sprawdzających jego poprawność."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import requests"
+   ]
+  }
+ ]
+}
