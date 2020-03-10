@@ -10,7 +10,7 @@ returns: mergedLists - polaczone ze soba listy obiektow posts i users
 
 '''
 def mergeLists(posts, users, joinKey):
-    mergedLists = posts
+    mergedLists = posts.copy()
     for i in range(len(posts)):
         for j in range(len(users)):
             if posts[i][joinKey] == users[j]['id']:
