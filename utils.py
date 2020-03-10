@@ -60,7 +60,7 @@ def calculateDistances(users):
     for i in rng:
         tempDistance = 0
         neighbours[i] = []
-        # GEO1 = LATITUDE, LONGTITUDE
+        # GEO = LATITUDE, LONGTITUDE
         geo1 = (users[i]['address']['geo']['lat'], users[i]['address']['geo']['lng'])
         for j in rng:
             geo2 = (users[j]['address']['geo']['lat'], users[j]['address']['geo']['lng'])
